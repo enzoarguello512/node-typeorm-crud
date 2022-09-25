@@ -16,6 +16,10 @@ Las claves de autenticación para pgadmin4 son (estan en el fichero `".env"`):
 **usuario**: arguelar@gmail.com  
 **contraseña**: admin
 
+Para facilitar el desarrollo se podría tener un fichero de docker dedicado, por ejemplo
+[docker-compose-dev.yml](https://github.com/enzoarguello512/node-rest-jwt/blob/main/docker-compose-dev.yml),
+pero no la quería complicar mucho ja.
+
 ### Importante si vas a usar docker
 
 **TL;DR Si vas a probar, usa el script que quieras, pero si vas a usar `npm start`
