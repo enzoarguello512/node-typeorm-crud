@@ -1,0 +1,28 @@
+version: '3.9'
+services:
+  database:
+    image: postgres:14.5
+    restart: always
+    ports:
+      - 5432:5432
+    env_file:
+      - .env
+    volumes:
+      - data:/var/lib/postgresql/data
+  pgadmin:
+    image: dpage/pgadmin4
+    ports:
+      - 80:80
+    env_file:
+      - .env
+    depends_on:
+      - database
+  app:
+    build: .
+    ports:
+      - 8080:8080
+    depends_on:
+      - database
+
+volumes:
+  data:
