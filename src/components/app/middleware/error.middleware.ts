@@ -4,6 +4,7 @@ import ErrorHandler from '../../../common/error.handler.config';
 import BaseError, { errorStructure } from '../../../common/error/base.error';
 
 class ErrorMiddleware {
+  // Main error handler, attempts to ensure error consistency throughout the application.
   public async handle(
     err: BaseError,
     req: express.Request,

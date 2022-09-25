@@ -10,7 +10,7 @@ const controller = new ColorsController();
 
 /**
  * GET: Get all colors
- * POST: Add new color
+ * POST: Add a new color
  */
 router
   .route(`/`)
@@ -30,11 +30,10 @@ router
   );
 
 /**
- * PUT: Get all colors
- * GET: Add new color
- * DELETE: Add new color
+ * PUT: Update a color
+ * GET: Find an individual color
+ * DELETE: Delete a color
  */
-
 router.param(`colorId`, ColorsMiddleware.extractColorId);
 router
   .route(`/:colorId`)

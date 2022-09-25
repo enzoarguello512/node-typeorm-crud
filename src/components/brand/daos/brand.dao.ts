@@ -17,6 +17,7 @@ export class BrandsDao implements ICrud {
   public async create(brandFields: ICreateBrandDto) {
     try {
       const brand = Brand.create({ ...brandFields });
+      // This prevents the undefined error in case the user does not send us the vehiclesId property.
       if (brandFields.vehiclesId) {
         const vehicles = await Vehicle.findByIds(brandFields.vehiclesId);
         brand.vehicles = vehicles;
@@ -44,6 +45,8 @@ export class BrandsDao implements ICrud {
 
   public async readById(brandId: string, alreadyFetchedBrand?: Brand) {
     try {
+      // This is because of the middleware we are using previously (validateBrandExists) to check if
+      // the brand exists and prevents making another request to the server.
       if (alreadyFetchedBrand) return alreadyFetchedBrand;
       return await Brand.findOne({
         where: {
@@ -63,6 +66,7 @@ export class BrandsDao implements ICrud {
     alreadyFetchedBrand: Brand
   ) {
     try {
+      // Combine properties with the spread operator
       alreadyFetchedBrand = {
         ...alreadyFetchedBrand,
         ...brandFields,
@@ -72,6 +76,7 @@ export class BrandsDao implements ICrud {
       if (typeof brandId === 'string') {
         alreadyFetchedBrand.id = parseInt(brandId);
       }
+      // This prevents the undefined error in case the user does not send us the vehiclesId property.
       if (brandFields.vehiclesId) {
         const vehicles = await Vehicle.findByIds(brandFields.vehiclesId);
         alreadyFetchedBrand.vehicles = vehicles;

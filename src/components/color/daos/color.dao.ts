@@ -17,6 +17,7 @@ export class ColorsDao implements ICrud {
   public async create(colorFields: ICreateColorDto) {
     try {
       const color = Color.create({ ...colorFields });
+      // This prevents the undefined error in case the user does not send us the vehiclesId property.
       if (colorFields.vehiclesId) {
         const vehicles = await Vehicle.findByIds(colorFields.vehiclesId);
         color.vehicles = vehicles;
@@ -48,6 +49,8 @@ export class ColorsDao implements ICrud {
 
   public async readById(colorId: string, alreadyFetchedColor?: Color) {
     try {
+      // This is because of the middleware we are using previously (validateColorExists) to check if
+      // the color exists and prevents making another request to the server.
       if (alreadyFetchedColor) return alreadyFetchedColor;
       return await Color.findOne({
         where: {
@@ -67,6 +70,7 @@ export class ColorsDao implements ICrud {
     alreadyFetchedColor: Color
   ) {
     try {
+      // Combine properties with the spread operator
       alreadyFetchedColor = {
         ...alreadyFetchedColor,
         ...colorFields,
@@ -76,6 +80,7 @@ export class ColorsDao implements ICrud {
       if (typeof colorId === 'string') {
         alreadyFetchedColor.id = parseInt(colorId);
       }
+      // This prevents the undefined error in case the user does not send us the vehiclesId property.
       if (colorFields.vehiclesId) {
         const vehicles = await Vehicle.findByIds(colorFields.vehiclesId);
         alreadyFetchedColor.vehicles = vehicles;

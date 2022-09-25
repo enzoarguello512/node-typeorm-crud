@@ -10,7 +10,7 @@ const controller = new VehiclesController();
 
 /**
  * GET: Get all vehicles
- * POST: Add new vehicle
+ * POST: Add a new vehicle
  */
 router
   .route(`/`)
@@ -41,11 +41,10 @@ router
   );
 
 /**
- * PUT: Get all vehicles
- * GET: Add new vehicle
- * DELETE: Add new vehicle
+ * PUT: Update a vehicle
+ * GET: Find an individual vehicle
+ * DELETE: Delete a vehicle
  */
-
 router.param(`vehicleId`, VehiclesMiddleware.extractVehicleId);
 router
   .route(`/:vehicleId`)

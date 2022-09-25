@@ -18,6 +18,7 @@ export class VehiclesDao implements ICrud {
   public async create(vehicleFields: ICreateVehicleDto) {
     try {
       const vehicle = Vehicle.create({ ...vehicleFields });
+      // This prevents the undefined error in case the user does not send us the colorsId property.
       if (vehicleFields.colorsId) {
         const colors = await Color.findByIds(vehicleFields.colorsId);
         vehicle.colors = colors;
@@ -46,6 +47,8 @@ export class VehiclesDao implements ICrud {
 
   public async readById(vehicleId: string, alreadyFetchedVehicle?: Vehicle) {
     try {
+      // This is because of the middleware we are using previously (validateVehicleExists) to check if
+      // the vehicle exists and prevents making another request to the server.
       if (alreadyFetchedVehicle) return alreadyFetchedVehicle;
       return await Vehicle.findOne({
         where: {
@@ -66,6 +69,7 @@ export class VehiclesDao implements ICrud {
     alreadyFetchedVehicle: Vehicle
   ) {
     try {
+      // Combine properties with the spread operator
       alreadyFetchedVehicle = {
         ...alreadyFetchedVehicle,
         ...vehicleFields,
@@ -75,6 +79,7 @@ export class VehiclesDao implements ICrud {
       if (typeof vehicleId === 'string') {
         alreadyFetchedVehicle.id = parseInt(vehicleId);
       }
+      // This prevents the undefined error in case the user does not send us the colorsId property.
       if (vehicleFields.colorsId) {
         const colors = await Color.findByIds(vehicleFields.colorsId);
         alreadyFetchedVehicle.colors = colors;

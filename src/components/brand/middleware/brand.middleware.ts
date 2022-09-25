@@ -22,6 +22,7 @@ class BrandsMiddleware {
     }
   }
 
+  // Utility for downstream middleware/controllers
   public async extractBrandId(
     req: express.Request,
     res: express.Response,

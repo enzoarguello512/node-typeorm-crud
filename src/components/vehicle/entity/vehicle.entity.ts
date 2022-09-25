@@ -39,6 +39,7 @@ export class Vehicle extends BaseEntity {
   @Column()
   model: string;
 
+  // Customized table for many-to-many union
   @ManyToMany(() => Color, (color) => color.vehicles)
   @JoinTable({
     name: 'vehicles_colors',

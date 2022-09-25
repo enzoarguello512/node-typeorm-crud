@@ -10,7 +10,7 @@ const controller = new BrandsController();
 
 /**
  * GET: Get all brands
- * POST: Add new brand
+ * POST: Add a new brand
  */
 router
   .route(`/`)
@@ -30,11 +30,10 @@ router
   );
 
 /**
- * PUT: Get all brands
- * GET: Add new brand
- * DELETE: Add new brand
+ * PUT: Update a brand
+ * GET: Find an individual brand
+ * DELETE: Delete a brand
  */
-
 router.param(`brandId`, BrandsMiddleware.extractBrandId);
 router
   .route(`/:brandId`)

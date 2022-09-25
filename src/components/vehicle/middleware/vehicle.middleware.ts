@@ -22,6 +22,7 @@ class VehiclesMiddleware {
     }
   }
 
+  // Utility for downstream middleware/controllers
   public async extractVehicleId(
     req: express.Request,
     res: express.Response,

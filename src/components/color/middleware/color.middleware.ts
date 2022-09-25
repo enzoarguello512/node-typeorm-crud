@@ -22,6 +22,7 @@ class ColorsMiddleware {
     }
   }
 
+  // Utility for downstream middleware/controllers
   public async extractColorId(
     req: express.Request,
     res: express.Response,
