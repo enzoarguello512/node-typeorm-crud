@@ -102,7 +102,7 @@ api/vehicle (POST)
 ```javascript
 {
   "name": "Dodge GRAND CARAVAN",
-  "year": 2010,
+  "year": 2010, // opcional, se puede dejar con valor null
   "brandId": 1, // opcional, se puede dejar con valor null
   "model": "DODGE",
   "colorsId": [1] // opcional, si el id no existe deja el array vacio
