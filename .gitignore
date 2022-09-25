@@ -80,7 +80,6 @@ package-lock.json
 .yarn-integrity
 
 # dotenv environment variables file
-.env
 .env.test
 .env.test.local
 .env.production
