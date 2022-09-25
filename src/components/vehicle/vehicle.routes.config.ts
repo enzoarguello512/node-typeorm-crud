@@ -37,6 +37,7 @@ router
       .withMessage('ColorsId only has to contain numbers (ids)')
       .optional(),
     BodyValidationMiddleware.verifyBodyFieldsErrors,
+    VehiclesMiddleware.verifyRelationshipWithBrand,
     controller.createVehicle
   );
 
@@ -76,6 +77,7 @@ router
       .withMessage('ColorsId only has to contain numbers (ids)')
       .optional(),
     BodyValidationMiddleware.verifyBodyFieldsErrors,
+    VehiclesMiddleware.verifyRelationshipWithBrand,
     controller.updateVehicleById
   )
   .get(controller.getVehicleById)
