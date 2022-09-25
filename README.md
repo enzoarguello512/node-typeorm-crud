@@ -53,7 +53,8 @@ te tire error de coneccion `getaddrinfo EAI_AGAIN`
 ```
 
 No se me ocurre una forma “práctica” de solucionar esto jaja, capas cambiando
-el dockerfile y teniendo dos `data-souce.ts` con diferentes direcciones.
+el dockerfile y teniendo dos [data-souce.ts](https://github.com/enzoarguello512/node-typeorm-crud/blob/main/src/data-source.ts) 
+con diferentes direcciones.
 
 **Cabe resaltar también que en el modo default el servidor arranca en el puerto
 8081 y en “producción” arranca en el 8080, así que ojo al tejo 👀.**
