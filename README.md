@@ -67,7 +67,7 @@ el dockerfile y teniendo dos `data-souce.ts` con diferentes direcciones.
       original hace referencia al contenedor que crea docker, con cambiar eso
       creo que ya estaría.
 3. Arrancar el servidor con alguno de los siguientes comandos:
-   1. `npm start` para iniciar en modo normal
+   1. `npm start` para iniciar en modo normal (leer primero [Importante si vas a usar docker](#importante-si-vas-a-usar-docker))
    2. `npm run development` para iniciar en modo desarrollo
 4. En caso de querer correr migraciones se pueden ejecutar
    1. `npm run migration:generate –name=Nombre` para generar una nueva migración
