@@ -21,6 +21,10 @@ export class ColorsService implements ICrud {
     return dao.readById(id, alreadyFetchedColor);
   }
 
+  async readByName(name: string): Promise<Color | null> {
+    return dao.readByName(name);
+  }
+
   async updateById(
     resource: ICreateColorDto,
     alreadyFetchedColor: Color

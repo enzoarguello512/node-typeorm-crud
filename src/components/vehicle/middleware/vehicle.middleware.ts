@@ -30,6 +30,7 @@ class VehiclesMiddleware {
     next: express.NextFunction
   ) {
     try {
+      // brandId is an optional property, but in case the user wants to send it we will check if it exists
       if (req.body.brandId) {
         const vehicle = await brandService.readById(req.body.brandId);
         if (!vehicle) {

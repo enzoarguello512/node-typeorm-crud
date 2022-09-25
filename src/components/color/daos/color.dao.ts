@@ -61,7 +61,15 @@ export class ColorsDao implements ICrud {
         },
       });
     } catch (err) {
-      throw new BaseError('Failed to find color', err, 'readById');
+      throw new BaseError('Failed to find color by id', err, 'readById');
+    }
+  }
+
+  public async readByName(name: string) {
+    try {
+      return await Color.findOneBy({ name });
+    } catch (err) {
+      throw new BaseError('Failed to find color by name', err, 'readByName');
     }
   }
 
