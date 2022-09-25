@@ -6,6 +6,7 @@ import path from 'path';
 process.env['NODE_CONFIG_DIR'] = path.join(__dirname, 'config');
 import config from 'config';
 
+// Default configuration brought from ./config/
 const postgresConfig = config.get<{
   port: number;
   host: string;

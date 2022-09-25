@@ -8,6 +8,7 @@ const port = config.get<number>('server.port');
 const domain = config.get<string>('server.domain');
 const startMessage: string = `Server running at http://${domain}:${port}`;
 
+// To start the server, it will fail if it cannot connect to the database.
 (async function () {
   try {
     await AppDataSource.initialize();

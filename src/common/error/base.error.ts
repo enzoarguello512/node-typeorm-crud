@@ -1,5 +1,6 @@
 import httpStatus from 'http-status';
 
+// Customized class for errors (more detailed)
 export default class BaseError extends Error {
   public readonly log: string;
   public readonly methodName: string | undefined;
@@ -25,6 +26,7 @@ export default class BaseError extends Error {
   }
 }
 
+// Function that is used in middleware to maintain consistency in the error messages sent to the user.
 export function errorStructure(
   httpCode: number,
   message?: string,

@@ -2,6 +2,7 @@ import express from 'express';
 import { validationResult } from 'express-validator';
 import { BadRequestError } from '../error/bad.request.error';
 
+// Middleware for working with express-validator
 class BodyValidationMiddleware {
   verifyBodyFieldsErrors(
     req: express.Request,

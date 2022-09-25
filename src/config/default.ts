@@ -9,6 +9,8 @@ if (dotenvResult.error) {
   //console.error(dotenvResult.error);
 }
 
+// This file will be used by default when in development mode.
+// The port will be changed to 8081.
 const defaultConfig = {
   server: {
     port: process.env.PORT || 8081,

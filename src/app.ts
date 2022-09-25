@@ -30,6 +30,7 @@ app.use(express.urlencoded({ extended: false }));
 // cross Origin Resource Sharing
 app.use(cors(corsOptions));
 
+// helmet helps you secure your express apps
 app.use(helmet());
 
 // Routes config
@@ -42,6 +43,7 @@ app.use(ErrorMiddleware.handle);
 // Manage non-existent routes
 app.use(ErrorMiddleware.routeNotFound);
 
+// Unhandled errors
 process.on('uncaughtException', async (error: Error): Promise<void> => {
   ErrorHandler.handleError(error);
   if (!ErrorHandler.isTrustedError(error)) process.exit(1);
