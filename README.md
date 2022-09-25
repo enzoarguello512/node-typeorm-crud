@@ -18,20 +18,22 @@ Las claves de autenticación para pgadmin4 son (estan en el fichero `".env"`):
 
 ### Importante si vas a usar docker
 
-**TL;DR Si vas a probar usa el script que quieras, pero si vas a usar `npm start`
+**TL;DR Si vas a probar, usa el script que quieras, pero si vas a usar `npm start`
 vas a tener que cambiar las direcciones de forma manual.**
 
 Yo creo que la más importante a mencionar es que docker usa un coneccion
 distinta, al ser contenedores se tiene que usar el nombre del contenedor para
 poder conectarse y no la dirección de tu maquina, es por eso que hice un
-ambiente específico para docker “producción” digamos, `npm start` es el script
+ambiente específico para docker, “producción” digamos, `npm start` es el script
 que designe para correr los contenedores y así no hay conflictos, porque docker
 necesita poder conectarse al servicio de “database” configurado en
-[docker-compose.yml]() y para que vos te puedas conectar desde tu máquina local
-necesitas entrar desde localhost.
+[docker-compose.yml](https://github.com/enzoarguello512/node-typeorm-crud/blob/main/docker-compose.yml) 
+y para que vos te puedas conectar desde tu máquina local necesitas entrar 
+desde localhost.
 
 Cambiando las direcciones de manera manual se podría lograr, por ejemplo,
-levantas docker con las siguientes propiedades en [./src/config/default.ts]().
+levantas docker con las siguientes propiedades en 
+[./src/config/default.ts](https://github.com/enzoarguello512/node-typeorm-crud/blob/main/src/config/default.ts).
 
 ```javascript
 {
@@ -59,7 +61,7 @@ el dockerfile y teniendo dos `data-souce.ts` con diferentes direcciones.
 ## Pasos para arrancar el proyecto
 
 1. Instalar las dependencias con `npm i`
-2. En caso de querer levantar la imagen con docker se puede usar `docker compose up`
+2. En caso de querer levantar la imagen y contenedores con docker se puede usar `docker compose up`
    1. En caso de querer usar una instancia local de postgres habría que cambiar
       la variable de entorno `“POSTGRES_HOST”` en el fichero `“.env”`, el valor
       original hace referencia al contenedor que crea docker, con cambiar eso
@@ -97,7 +99,7 @@ adjunto una captura.
 
 api/vehicle (POST)
 
-```json
+```javascript
 {
   "name": "Dodge GRAND CARAVAN",
   "year": 2010,
@@ -109,7 +111,7 @@ api/vehicle (POST)
 
 api/brand(POST)
 
-```json
+```javascript
 {
   "name": "DODGE",
   "vehiclesId": [1] // opcional, si el id no existe deja el array vacio
@@ -118,7 +120,7 @@ api/brand(POST)
 
 api/color(POST)
 
-```json
+```javascript
 {
   "name": "Blue",
   "vehiclesId": [1] // opcional, si el id no existe deja el array vacio
