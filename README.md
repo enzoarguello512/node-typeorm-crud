@@ -84,7 +84,7 @@ con diferentes direcciones.
    2. `npm run migration:run` para correr las migraciones en la ruta `“src/migrations/*”`
    3. `npm run migration:create --name=Nombre` para crear una plantilla y hacer la
       migración de manera manual, la variable de nombre es la misma que en el
-      punto 2 (ii).
+      punto 1 (i).
    4. `npm run migration:revert` para revertir las migraciones hechas.
 
 ## Colección de Postman
