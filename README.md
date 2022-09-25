@@ -91,7 +91,10 @@ con diferentes direcciones.
 
 Una colección simple, tiene una variable local que la pueden cambiar
 dependiendo de donde levanten la aplicación, en mi caso es
-[http://localhost:8080](http://localhost:8080).
+[http://localhost:8080](http://localhost:8080). **También como menciono
+más arriba, el puerto puede cambiar dependiendo del ambiente, puede 
+ser que tengas que cambiar el puerto/variable de Postman en modo 
+desarrollo a `8081` [http://localhost:8081](http://localhost:8081)**
 
 Creo que tendría que andar, si no me equivoco deje publico el link también
 adjunto una captura.
