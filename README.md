@@ -79,8 +79,8 @@ con diferentes direcciones.
       de manera automática, “Nombre” es una variable, la podes reemplazar con el
       nombre que le quieras dar a tu migracion, ejemplo
       `npm run migration:generate --name=initial`  
-      Pd: No se que tan bien pueda a llegar las variables por línea de comandos
-      en otros sistemas operativos.
+      **Pd: No se que tan bien pueda a llegar las variables por línea de comandos
+      en otros sistemas operativos.**
    2. `npm run migration:run` para correr las migraciones en la ruta `“src/migrations/*”`
    3. `npm run migration:create --name=Nombre` para crear una plantilla y hacer la
       migración de manera manual, la variable de nombre es la misma que en el
