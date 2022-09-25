@@ -70,14 +70,14 @@ el dockerfile y teniendo dos `data-souce.ts` con diferentes direcciones.
    1. `npm start` para iniciar en modo normal (leer primero [Importante si vas a usar docker](#importante-si-vas-a-usar-docker))
    2. `npm run development` para iniciar en modo desarrollo
 4. En caso de querer correr migraciones se pueden ejecutar
-   1. `npm run migration:generate –name=Nombre` para generar una nueva migración
+   1. `npm run migration:generate --name=Nombre` para generar una nueva migración
       de manera automática, “Nombre” es una variable, la podes reemplazar con el
       nombre que le quieras dar a tu migracion, ejemplo
-      `npm run migration:generate –name=initial`  
+      `npm run migration:generate --name=initial`  
       Pd: No se que tan bien pueda a llegar las variables por línea de comandos
       en otros sistemas operativos.
    2. `npm run migration:run` para correr las migraciones en la ruta `“src/migrations/*”`
-   3. `npm run migration:create –name=Nombre` para crear una plantilla y hacer la
+   3. `npm run migration:create --name=Nombre` para crear una plantilla y hacer la
       migración de manera manual, la variable de nombre es la misma que en el
       punto 2 (ii).
    4. `npm run migration:revert` para revertir las migraciones hechas.
