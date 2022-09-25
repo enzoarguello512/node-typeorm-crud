@@ -13,7 +13,7 @@ Si se usa docker también agregue [pgadmin4](https://www.pgadmin.org/) para pode
 ver/manipular los datos con mayor facilidad, lo podes visualizar en [http://localhost/](http://localhost/)
 
 Las claves de autenticación para pgadmin4 son (estan en el fichero `".env"`):  
-**usuario**: admin  
+**usuario**: arguelar@gmail.com  
 **contraseña**: admin
 
 ### Importante si vas a usar docker
