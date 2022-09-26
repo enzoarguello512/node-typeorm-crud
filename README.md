@@ -25,7 +25,7 @@ pero no la quería complicar mucho ja.
 **TL;DR Si vas a probar, usa el script que quieras, pero si vas a usar `npm start`
 vas a tener que cambiar las direcciones de forma manual.**
 
-Yo creo que la más importante a mencionar es que docker usa un coneccion
+Yo creo que la más importante a mencionar es que docker usa un conexión
 distinta, al ser contenedores se tiene que usar el nombre del contenedor para
 poder conectarse y no la dirección de tu maquina, es por eso que hice un
 ambiente específico para docker, “producción” digamos, `npm start` es el script
@@ -37,7 +37,8 @@ desde localhost.
 
 Cambiando las direcciones de manera manual se podría lograr, por ejemplo,
 levantas docker con las siguientes propiedades en 
-[./src/config/default.ts](https://github.com/enzoarguello512/node-typeorm-crud/blob/main/src/config/default.ts).
+[./src/config/default.ts](https://github.com/enzoarguello512/node-typeorm-crud/blob/main/src/config/default.ts) o en
+[./src/config/production.ts](https://github.com/enzoarguello512/node-typeorm-crud/blob/main/src/config/production.ts).
 
 ```javascript
 {
@@ -47,7 +48,7 @@ levantas docker con las siguientes propiedades en
 ```
 
 Y luego una vez que docker esta corriendo bien, cambias a localhost para que no
-te tire error de coneccion `getaddrinfo EAI_AGAIN`
+te tire error de conexión `getaddrinfo EAI_AGAIN`
 
 ```javascript
 {
