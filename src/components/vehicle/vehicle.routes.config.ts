@@ -31,10 +31,9 @@ router
       .withMessage('BrandId has to be a number')
       .optional(),
     body('colorsId')
-      .isArray()
-      .withMessage('ColorsId has to be an array of numbers (ids)')
+      .toArray()
       .isNumeric()
-      .withMessage('ColorsId only has to contain numbers (ids)')
+      .withMessage('ColorsId has to be an array of numbers (ids)')
       .optional(),
     BodyValidationMiddleware.verifyBodyFieldsErrors,
     VehiclesMiddleware.verifyRelationshipWithBrand,
@@ -71,10 +70,9 @@ router
       .optional(),
     body('model').isString().withMessage('Model has to be a string').optional(),
     body('colorsId')
-      .isArray()
-      .withMessage('ColorsId has to be an array of numbers (ids)')
+      .toArray()
       .isNumeric()
-      .withMessage('ColorsId only has to contain numbers (ids)')
+      .withMessage('ColorsId has to be an array of numbers (ids)')
       .optional(),
     BodyValidationMiddleware.verifyBodyFieldsErrors,
     VehiclesMiddleware.verifyRelationshipWithBrand,

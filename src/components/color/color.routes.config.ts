@@ -20,10 +20,9 @@ router
       .isString()
       .withMessage('Required field "name" of type "string"'),
     body('vehiclesId')
-      .isArray()
-      .withMessage('VehiclesId has to be an array of numbers(ids)')
+      .toArray()
       .isNumeric()
-      .withMessage('VehiclesId only has to contain numbers (ids)')
+      .withMessage('VehiclesId has to be an array of numbers(ids)')
       .optional(),
     BodyValidationMiddleware.verifyBodyFieldsErrors,
     ColorsMiddleware.validateSameColorDoesntExist,
@@ -51,10 +50,9 @@ router
   .put(
     body('name').isString().withMessage('Name has to be a string').optional(),
     body('vehiclesId')
-      .isArray()
-      .withMessage('VehiclesId has to be an array of numbers(ids)')
+      .toArray()
       .isNumeric()
-      .withMessage('VehiclesId only has to contain numbers (ids)')
+      .withMessage('VehiclesId has to be an array of numbers(ids)')
       .optional(),
     BodyValidationMiddleware.verifyBodyFieldsErrors,
     ColorsMiddleware.validateSameColorDoesntExist,
